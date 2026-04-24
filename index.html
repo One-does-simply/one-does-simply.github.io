@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Does Simply — A family of spec-driven frameworks</title>
+  <meta name="description" content="ODS is a family of spec-driven app frameworks. Write JSON, get a fully functional application.">
+  <style>
+    :root {
+      --indigo: #4F46E5;
+      --purple: #7C3AED;
+      --text: #1E293B;
+      --text-light: #64748B;
+      --card-bg: #FFFFFF;
+      --border: #E2E8F0;
+      --soft-bg: #F8FAFC;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--soft-bg);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--indigo), var(--purple));
+      color: white;
+      padding: 96px 24px 72px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .hero .tagline {
+      font-size: 1.35rem;
+      font-weight: 500;
+      opacity: 0.9;
+      margin-bottom: 28px;
+    }
+
+    .hero p {
+      max-width: 640px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      opacity: 0.9;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 56px 24px;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
+    }
+
+    h2 + .section-subtitle {
+      color: var(--text-light);
+      margin-bottom: 28px;
+    }
+
+    .families {
+      display: grid;
+      gap: 16px;
+    }
+
+    .family {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+    }
+
+    .family.active:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(79, 70, 229, 0.12);
+      border-color: var(--indigo);
+    }
+
+    .family.planned {
+      opacity: 0.7;
+      cursor: default;
+    }
+
+    .status-badge {
+      flex-shrink: 0;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.3px;
+    }
+
+    .status-badge.active {
+      background: #DCFCE7;
+      color: #166534;
+    }
+
+    .status-badge.planned {
+      background: #F1F5F9;
+      color: var(--text-light);
+    }
+
+    .family-info {
+      flex: 1;
+    }
+
+    .family-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+    }
+
+    .family-desc {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-top: 2px;
+    }
+
+    .family-arrow {
+      color: var(--indigo);
+      font-size: 1.4rem;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+
+    .family.active:hover .family-arrow {
+      opacity: 1;
+    }
+
+    .philosophy {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-top: 32px;
+    }
+
+    .philosophy h2 {
+      margin-bottom: 16px;
+    }
+
+    .philosophy ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .philosophy li {
+      padding-left: 20px;
+      position: relative;
+      color: var(--text);
+    }
+
+    .philosophy li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--indigo);
+      font-weight: 700;
+    }
+
+    .philosophy strong {
+      color: var(--indigo);
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      padding: 40px 24px 56px;
+    }
+
+    .footer a {
+      color: var(--indigo);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <h1>One Does Simply</h1>
+    <div class="tagline">A family of spec-driven frameworks</div>
+    <p>
+      A <em>builder</em> writes a JSON spec describing their app; a
+      <em>framework</em> renders it as a fully functional application
+      with persistence, auth, and a polished UI.
+    </p>
+  </section>
+
+  <div class="container">
+
+    <h2>Families</h2>
+    <p class="section-subtitle">
+      Each family is a self-contained monorepo — the specification, its
+      renderers, the AI build helpers that author it, and conformance
+      scenarios that pin behavior across implementations.
+    </p>
+
+    <div class="families">
+
+      <a href="https://github.com/One-does-simply/ods-pages" class="family active">
+        <span class="status-badge active">Active</span>
+        <div class="family-info">
+          <div class="family-name">ods-pages</div>
+          <div class="family-desc">Page-based apps — forms, lists, charts, dashboards.</div>
+        </div>
+        <span class="family-arrow">→</span>
+      </a>
+
+      <div class="family planned">
+        <span class="status-badge planned">Planned</span>
+        <div class="family-info">
+          <div class="family-name">ods-chat</div>
+          <div class="family-desc">Conversational agents that author and evolve specs.</div>
+        </div>
+      </div>
+
+      <div class="family planned">
+        <span class="status-badge planned">Planned</span>
+        <div class="family-info">
+          <div class="family-name">ods-workflow</div>
+          <div class="family-desc">Orchestration between spec-driven apps.</div>
+        </div>
+      </div>
+
+      <div class="family planned">
+        <span class="status-badge planned">Planned</span>
+        <div class="family-info">
+          <div class="family-name">ods-game</div>
+          <div class="family-desc">Game-app specs and renderers.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="philosophy">
+      <h2>Philosophy</h2>
+      <ul>
+        <li><strong>Specs over code.</strong> If behavior can be described declaratively in JSON, it should be.</li>
+        <li><strong>Multiple renderers per family.</strong> One spec, many targets — web, mobile, desktop.</li>
+        <li><strong>Atomic cross-framework commits.</strong> When the spec changes, all renderers update together.</li>
+        <li><strong>No silent breaking changes.</strong> Conformance scenarios pin behavior; renderers that disagree fail loudly.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Pre-1.0 · MIT licensed · <a href="https://github.com/One-does-simply">github.com/One-does-simply</a>
+  </div>
+
+</body>
+</html>
